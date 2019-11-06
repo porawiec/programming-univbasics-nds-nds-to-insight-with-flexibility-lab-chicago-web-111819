@@ -22,7 +22,7 @@ def flatten_a_o_a(aoa)
 end
 
 def movie_with_director_name(director_name, movie_data)
-  pp movie_data
+  #pp movie_data
   { 
     :title => movie_data[:title],
     :worldwide_gross => movie_data[:worldwide_gross],
@@ -67,7 +67,7 @@ def movies_with_director_key(name, movies_collection)
     row_index += 1
   end
 
- array_of_dir_name_movie_hashes
+  array_of_dir_name_movie_hashes
 
 end
 
@@ -128,14 +128,17 @@ def movies_with_directors_set(source)
   row_index = 0
   
   while row_index < source.length do
-    
+  #pp source  
     column_index = 0
 
     while column_index < source[row_index][:movies].length
       movie_title = source[row_index][:movies][column_index][:title]
+      movie_studio = source[row_index][:movies][column_index][:studio]
+      movie_worldwide_gross = source[row_index][:movies][column_index][:worldwide_gross]
+      movie_release_year = source[row_index][:movies][column_index][:release_year]
       dir_name = source[row_index][:name]
       
-      dir_and_movies_hash = {:title => movie_title, :director_name => dir_name}
+      dir_and_movies_hash = {:director_name => dir_name, :title => movie_title, :studio => movie_studio, :worldwide_gross => movie_worldwide_gross, :release_year => movie_release_year}
       dir_and_movies_array = [dir_and_movies_hash]
       all_dir_movies.push(dir_and_movies_array)
       column_index += 1
