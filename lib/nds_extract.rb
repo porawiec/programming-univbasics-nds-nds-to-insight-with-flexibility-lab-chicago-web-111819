@@ -145,7 +145,7 @@ def movies_with_directors_set(source)
     end
     row_index += 1
   end
- pp all_dir_movies
+  all_dir_movies
 end
 
 # ----------------    End of Your Code Region --------------------
