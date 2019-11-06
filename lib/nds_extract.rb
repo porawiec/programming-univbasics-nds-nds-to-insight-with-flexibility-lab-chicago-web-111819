@@ -139,7 +139,7 @@ def movies_with_directors_set(source)
       dir_name = source[row_index][:name]
       
       dir_and_movies_hash = {:director_name => dir_name, :title => movie_title, :studio => movie_studio, :worldwide_gross => movie_worldwide_gross, :release_year => movie_release_year}
-      dir_and_movies_array = dir_and_movies_hash
+      dir_and_movies_array = [dir_and_movies_hash]
       all_dir_movies.push(dir_and_movies_array)
       column_index += 1
     end
