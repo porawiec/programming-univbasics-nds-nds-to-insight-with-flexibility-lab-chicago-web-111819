@@ -133,9 +133,12 @@ def movies_with_directors_set(source)
 
     while column_index < source[row_index][:movies].length
       movie_title = source[row_index][:movies][column_index][:title]
+      movie_studio = source[row_index][:movies][column_index][:studio]
+      movie_worldwide_gross = source[row_index][:movies][column_index][:worldwide_gross]
+      movie_release_year = source[row_index][:movies][column_index][:release_year]
       dir_name = source[row_index][:name]
       
-      dir_and_movies_hash = {:director_name => dir_name, :movies => movie_list}
+      dir_and_movies_hash = {:director_name => dir_name, :title => movie_title, :studio => movie_studio, :worldwide_gross => movie_worldwide_gross, :release_year => movie_release_year}
       dir_and_movies_array = dir_and_movies_hash
       all_dir_movies.push(dir_and_movies_array)
       column_index += 1
